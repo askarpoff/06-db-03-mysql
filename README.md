@@ -132,6 +132,7 @@ mysql> SHOW PROFILES;
 
 Приведите в ответе измененный файл `my.cnf`.
 ### Ответ:
+```
 [mysqld]
 pid-file        = /var/run/mysqld/mysqld.pid
 socket          = /var/run/mysqld/mysqld.sock
@@ -146,3 +147,4 @@ innodb_file_per_table = ON
 innodb_log_buffer_size = 1M
 innodb_buffer_pool_size = 1228M
 innodb_log_file_size = 100M
+```
