@@ -20,6 +20,29 @@
 
 ### Ответ:
 ```
+mysql> status
+--------------
+mysql  Ver 8.0.31 for Linux on x86_64 (MySQL Community Server - GPL)
+
+
+mysql> use db;
+Database changed
+mysql> SHOW TABLES;
++--------------+
+| Tables_in_db |
++--------------+
+| orders       |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from orders where price>300;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
 ```
 ## Задача 2
 
