@@ -92,6 +92,7 @@ mysql> select * from INFORMATION_SCHEMA.USER_ATTRIBUTES where user = 'test';
 - на `InnoDB`
 
 ### Ответ:
+```
 mysql> SELECT table_schema,table_name,engine FROM information_schema.tables WHERE table_schema = 'db';
 +--------------+------------+--------+
 | TABLE_SCHEMA | TABLE_NAME | ENGINE |
@@ -117,7 +118,7 @@ mysql> SHOW PROFILES;
 |       13 | 0.04366150 | alter table orders engine = InnoDB                                                             |
 +----------+------------+------------------------------------------------------------------------------------------------+
 3 rows in set, 1 warning (0.00 sec)
-
+```
 
 ## Задача 4 
 
