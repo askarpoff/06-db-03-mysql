@@ -131,3 +131,18 @@ mysql> SHOW PROFILES;
 - Размер файла логов операций 100 Мб
 
 Приведите в ответе измененный файл `my.cnf`.
+### Ответ:
+[mysqld]
+pid-file        = /var/run/mysqld/mysqld.pid
+socket          = /var/run/mysqld/mysqld.sock
+datadir         = /var/lib/mysql
+secure-file-priv= NULL
+
+# Custom config should go here
+!includedir /etc/mysql/conf.d/
+
+innodb_flush_log_at_trx_commit = 0
+innodb_file_per_table = ON
+innodb_log_buffer_size = 1M
+innodb_buffer_pool_size = 1228M
+innodb_log_file_size = 100M
