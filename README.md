@@ -59,7 +59,26 @@ mysql> select count(*) from orders where price>300;
     
 Используя таблицу INFORMATION_SCHEMA.USER_ATTRIBUTES получите данные по пользователю `test` и 
 **приведите в ответе к задаче**.
+```
+mysql> CREATE USER 'test'@'localhost'
+    ->     IDENTIFIED WITH mysql_native_password BY 'test-pass'
+    ->     WITH MAX_CONNECTIONS_PER_HOUR 100
+    ->     PASSWORD EXPIRE INTERVAL 180 DAY
+    ->     FAILED_LOGIN_ATTEMPTS 3 PASSWORD_LOCK_TIME 1
+    ->     ATTRIBUTE '{"first_name":"James", "last_name":"Pretty"}';
+Query OK, 0 rows affected (0.03 sec)
 
+mysql> GRANT SELECT ON db.* TO test@localhost;
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> select * from INFORMATION_SCHEMA.USER_ATTRIBUTES where user = 'test';
++------+-----------+------------------------------------------------+
+| USER | HOST      | ATTRIBUTE                                      |
++------+-----------+------------------------------------------------+
+| test | localhost | {"last_name": "Pretty", "first_name": "James"} |
++------+-----------+------------------------------------------------+
+1 row in set (0.00 sec)
+```
 ## Задача 3
 
 Установите профилирование `SET profiling = 1`.
