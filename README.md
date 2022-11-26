@@ -59,6 +59,7 @@ mysql> select count(*) from orders where price>300;
     
 Используя таблицу INFORMATION_SCHEMA.USER_ATTRIBUTES получите данные по пользователю `test` и 
 **приведите в ответе к задаче**.
+### Ответ:
 ```
 mysql> CREATE USER 'test'@'localhost'
     ->     IDENTIFIED WITH mysql_native_password BY 'test-pass'
